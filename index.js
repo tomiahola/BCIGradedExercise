@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+//const port = 3000
 const passport = require('passport');
 const BasicStrategy = require('passport-http').BasicStrategy;
 const bodyParser = require('body-parser');
@@ -10,6 +10,8 @@ const multer = require('multer');
 const upload = multer({dest: 'uploads/'});
 
 app.use(bodyParser.json());
+
+app.set('port', (process.env.PORT || 80));
 
 let userDb = [];
 let postingDb = [];
@@ -221,7 +223,6 @@ app.put('/postings/:id', passport.authenticate('jwt', {session: false}), (req, r
     }
 })
 
-
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+app.listen(app.get('port'), function() {
+    console.log(`Node app is running on port`, app.get('port'));
 })
