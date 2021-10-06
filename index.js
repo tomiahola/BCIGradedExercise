@@ -47,6 +47,11 @@ passport.use(new BasicStrategy(
         "email": "foo@bar.com"
     }
 */
+
+app.get('/', function(req,res) {
+    res.send("Hello world");
+})
+
 app.post('/users', (req, res) => {
 
     console.log("original password: " + req.body.password);
