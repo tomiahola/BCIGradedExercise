@@ -39,15 +39,6 @@ passport.use(new BasicStrategy(
     }
 ));
 
-
-/*This route will receive data structure
-    {
-        "username": "foo",
-        "password": "bar",
-        "email": "foo@bar.com"
-    }
-*/
-
 app.post('/users', (req, res) => {
 
     console.log("original password: " + req.body.password);
