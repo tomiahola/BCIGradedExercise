@@ -223,6 +223,6 @@ app.put('/postings/:id', passport.authenticate('jwt', {session: false}), (req, r
     }
 })
 
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), () => {
     console.log(`Node app is running on port`, app.get('port'));
 })
