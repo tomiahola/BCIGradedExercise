@@ -48,10 +48,6 @@ passport.use(new BasicStrategy(
     }
 */
 
-app.get('/', function(req,res) {
-    res.send("Hello world");
-})
-
 app.post('/users', (req, res) => {
 
     console.log("original password: " + req.body.password);
